@@ -9,8 +9,9 @@ class Solution:
                         "M" : 1000}
         total = 0
         for i in range(len(s)):
-            if i+1 < len(s) and number_vals[s[i]] < number_vals[s[i+1]]:
-                total -= number_vals[s[i]]
+            amount =number_vals[s[i]]
+            if i+1 < len(s) and amount < number_vals[s[i+1]]:
+                total -= amount
             else:
-                total += number_vals[s[i]]
+                total += amount
         return total
