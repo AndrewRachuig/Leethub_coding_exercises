@@ -17,22 +17,6 @@ class Solution:
                 return False
         
         columns = list(zip(board[0], board[1], board[2], board[3], board[4], board[5], board[6], board[7], board[8]))
-        
-        def check_column(column):
-            '''
-            Checks for validity of a given input column.
-            
-            Parameters: column - a given column from a sudoku puzzle.
-            
-            Returns:    True if column is valid.
-                        False if column is not valid.
-            '''
-            
-            column =[i for i in column if i != "."]
-            if len(column) == len(set(column)):
-                pass
-            else:
-                return False
             
         def make_subbox(row, col):
             '''
@@ -60,14 +44,14 @@ class Solution:
                 pass
             
         for i in columns:
-            if check_column(i) == False:
+            if check_row(i) == False:
                 return False
             else:
                 pass
             
         
         for i in sub_boxes:
-            if check_column(i) == False:
+            if check_row(i) == False:
                 return False
             else:
                 pass
